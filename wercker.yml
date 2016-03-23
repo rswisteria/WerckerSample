@@ -1,4 +1,6 @@
-box: takke/android-wercker
+box: takke/android-wercke
+steps:
+  - wercker/android-sdk-update@0.0.14r
 build:
   steps:
     - android-sdk-update:
