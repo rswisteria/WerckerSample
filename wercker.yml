@@ -6,6 +6,10 @@ build:
     - android-sdk-update:
       filter: platform-tools,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository,extra-android-support
     - script:
+      name: update sdk
+      code: |
+        echo y | sudo /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter extra
+    - script:
       name: run gradle
       code: |
         bash ./gradlew --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
