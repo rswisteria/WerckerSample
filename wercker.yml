@@ -4,7 +4,7 @@ steps:
 build:
   steps:
     - android-sdk-update:
-      filter: platform-tools,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository
+      filter: platform-tools,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository,extra-android-support-23.2.1
     - script:
       name: run gradle
       code: |
