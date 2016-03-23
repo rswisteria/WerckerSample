@@ -1,0 +1,6 @@
+box: takke/android-wercker
+build:
+  - script:
+    name: run gradle
+    code: |
+      gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
