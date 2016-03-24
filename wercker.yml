@@ -27,10 +27,11 @@ build:
       name: send package
       code: |
         cp app/build/outputs/apk/* $WERCKER_OUTPUT_DIR/
+        cp app/build/outputs/apk/app-debug.apk $WERCKER_REPORT_ARTIFACTS_DIR/
 
 deploy:
   steps:
     - script:
-      name: copy artifacts
+      name: show environments
       code: |
-        cp $WERCKER_SOURCE_DIR/app-debug.apk $WERCKER_REPORT_ARTIFACTS_DIR/
+        env
