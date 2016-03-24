@@ -19,3 +19,14 @@ build:
       name: run gradle
       code: |
         gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
+    - script:
+      name: send package
+      code: |
+        cp app/build/outputs/apk/* $WERCKER_OUTPUT_DIR/
+
+deploy:
+  steps:
+    - script:
+      name: copy artifacts
+      code: |
+        cp $WERCKER_SOURCE_DIR/app-debug.apk $WERCKER_REPORT_ARTIFACTS_DIR/
