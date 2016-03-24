@@ -4,6 +4,10 @@ steps:
 build:
   steps:
     - script:
+      name: show environments
+      code: |
+        env | grep WERCKER
+    - script:
       name: delete invalid directory
       code: |
         rm -rf /usr/local/android-sdk-linux/extras/android/support
