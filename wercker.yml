@@ -3,6 +3,12 @@ steps:
   - wercker/android-sdk-update@0.0.14
 build:
   steps:
+    - script:
+      name: delete invalid directory
+      code: |
+        rm -rf /usr/local/android-sdk-linux/extras/android/support
+        rm -rf /usr/local/android-sdk-linux/extras/android/m2repository
+        rm -rf /usr/local/android-sdk-linux/extras/google/m2repository
     - android-sdk-update:
       filter: platform-tools,build-tools-22.0.1,extra-android-m2repository,extra-google-m2repository,extra-android-support
     - script:
